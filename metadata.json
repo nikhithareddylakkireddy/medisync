@@ -1,0 +1,5 @@
+{
+  "name": "MediSync Book",
+  "description": "A modern doctor appointment booking platform for Indian healthcare, featuring location-based filtering, real-time booking, and an admin dashboard.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,27 @@
+{
+  "entities": {
+    "Appointment": {
+      "title": "Appointment",
+      "description": "A doctor appointment booking record",
+      "type": "object",
+      "properties": {
+        "patientName": { "type": "string", "description": "Name of the patient" },
+        "patientEmail": { "type": "string", "format": "email", "description": "Email of the patient" },
+        "doctorId": { "type": "string", "description": "ID of the doctor" },
+        "doctorName": { "type": "string", "description": "Name of the doctor" },
+        "date": { "type": "string", "format": "date", "description": "Date of the appointment" },
+        "time": { "type": "string", "description": "Time of the appointment" },
+        "status": { "type": "string", "enum": ["Pending", "Confirmed", "Cancelled"], "description": "Status of the appointment" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the appointment was created" },
+        "userId": { "type": "string", "description": "UID of the user who booked" }
+      },
+      "required": ["patientName", "patientEmail", "doctorId", "doctorName", "date", "time", "status", "userId"]
+    }
+  },
+  "firestore": {
+    "/appointments/{appointmentId}": {
+      "schema": "Appointment",
+      "description": "Collection of all doctor appointments"
+    }
+  }
+}
